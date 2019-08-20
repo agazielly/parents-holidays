@@ -7,4 +7,7 @@ class User < ApplicationRecord
   has_many :governesses
   has_many :governesses, through: :bookings
   has_many :bookings, through: :governesses
+
+  validates :firstname, presence: true
+  validates :lastname, presence: true
 end
