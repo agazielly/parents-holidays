@@ -1,7 +1,13 @@
-.cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
-  width: 66%;
-  margin-top: 17px;
+.left-side {
+  padding: 15px;
+}
+
+.right-side {
+  width: 60%;
+  background: blue;
+}
+
+.card-governess-infos #price {
+  position: absolute;
+  right: 10px
 }
