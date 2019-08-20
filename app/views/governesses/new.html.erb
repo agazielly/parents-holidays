@@ -1,0 +1,13 @@
+<container>
+  <div class="row">
+    <div class="col-4 offset-4">
+      <h2>Create a governess profile</h2>
+      <%= simple_form_for [@user, @governess] do |f| %>
+      <p><%= f.input :location %></p>
+      <p><%= f.input :price%></p>
+      <p><%= f.input :description %></p>
+      <p><%= f.submit "Create a governess", class: "btn btn-primary" %></p>
+      <% end %>
+    </div>
+  </div>
+</container>

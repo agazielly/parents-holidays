@@ -1,1 +1,39 @@
 
+<div class="banner-index-governesses" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  <div class="container-banner">
+  </div>
+</div>
+
+<div class="d-flex">
+  <div class="container">
+  <div class="left-side row d-flex justify-content-around">
+    <% @governesses.each do |governess| %>
+    <%= link_to governess_path(governess) do %>
+      <div class="cards-governess">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <div class="card-governess-infos">
+        <h2><%= governess.user.firstname %> <%= governess.user.lastname %></h2>
+        <p><%=governess.location%></p>
+        <p id= "price"><%=governess.price%></p>
+      </div>
+    </div>
+  <% end %>
+  <%end%>
+  </div>
+</div>
+
+  <div class="right-side"></div>
+</div>
+<!--
+<div class="container">
+  <%# @governesses.each do |governess| %>
+  <div class="cards-governess col-4 pt: 4px">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+    <div class="card-governess-infos">
+      <h2><%#= governess.user.firstname %> <%#= governess.user.lastname %></h2>
+      <p>governess.description</p>
+    </div>
+  </div>
+  <%#end%>
+</div> -->
+
