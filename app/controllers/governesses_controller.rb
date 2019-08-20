@@ -15,7 +15,7 @@ class GovernessesController < ApplicationController
 
   def create
     @governess = Governess.new(params_governess)
-    @governess.user = @user
+    @governess.user = current_user
     if @governess.save
       redirect_to governess_path(@governess)
     else
