@@ -1,7 +1,7 @@
 class GovernessesController < ApplicationController
 
   def index
-
+@governesses = Governess.all
   end
 
   def show

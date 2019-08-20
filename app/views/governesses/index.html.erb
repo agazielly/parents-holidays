@@ -1,1 +1,21 @@
 
+<div class="banner-index-governesses" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  <div class="container">
+  </div>
+</div>
+
+<div class="container_main">
+
+<% @governess.each do |governess| %>
+<%= governess.name %>
+
+<div class="card-governess">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+  <div class="card-trip-infos">
+    <div>
+      <h2><%= governess.first_name %> <%= governess.name %></h2>
+      <p>Short description here!</p>
+    </div>
+    <h2 class="card-trip-pricing"><%= governess.price %></h2>
+  </div>
+</div>
