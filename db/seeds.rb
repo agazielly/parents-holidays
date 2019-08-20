@@ -120,7 +120,6 @@ users_attributes = [
   },
 ]
 User.create!(users_attributes)
-User.save!
 puts 'Users created'
 
 puts 'Creating governesses...'
@@ -217,5 +216,4 @@ governesses_attributes = [
   },
 ]
 Governess.create!(governesses_attributes)
-Governess.save!
 puts 'Finished!'
