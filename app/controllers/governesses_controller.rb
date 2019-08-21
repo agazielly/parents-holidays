@@ -15,7 +15,7 @@ class GovernessesController < ApplicationController
   end
 
   def show
-
+     @governess = Governess.find(params[:id])
   end
 
   def new

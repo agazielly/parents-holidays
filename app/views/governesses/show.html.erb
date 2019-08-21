@@ -1,32 +1,45 @@
 <div class="container mt-5">
-  <%#= link_to "Back", governesses_path class: "btn btn-flat" %>
+  <%#= link_to "Back", @governesses_path class: "btn btn-flat" %>
   <div class="card-trip">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+    <%= image_tag 'fond profil.jpg' %>
     <div class="card-trip-infos">
-      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+      <%= image_tag @governess.user.picture, class:"card-trip-user avatar-bordered" %>
+      <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> -->
       <div class="name">
-        <h1>Prénom Nom</h1>
+        <h1>
+          <%= @governess.user.firstname %>
+          <%= @governess.user.lastname %>
+        </h1>
       </div>
-      <h2 class="card-trip-pricing">Price</h2>
-      <div class="book">
-        <%= link_to "Book now", "#", class: "btn btn-flat" %>
-      </div>
+      <h2 class="card-trip-pricing">
+        <%=@governess.price%>€/jour</h2>
     </div>
-
     <div class="card-trip-infos2">
-    <div class="localisation">
-      <h2>Localisation</h2>
-      <p>Paris</p>
+      <div class="localisation">
+        <h2>Localisation</h2>
+        <p>
+          <%=@governess.location%>
+        </p>
+      </div>
+      <div class="">
+        <h2>Description</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus aliquam suscipit, qui nihil quas unde beatae sunt dolorum id nemo. Officia nisi esse veritatis magnam soluta, sequi eius reprehenderit consequuntur!</p>
+      </div class="chat">
+      <%= image_tag 'chat.png', class: "img-style2", data: {toggle: "tooltip", placement: "top"}, title: "Send a Message" %>
     </div>
-
-    <div class="">
-      <h2>Description</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus aliquam suscipit, qui nihil quas unde beatae sunt dolorum id nemo. Officia nisi esse veritatis magnam soluta, sequi eius reprehenderit consequuntur!</p>
+  </div>
+  <div class="card-trip1">
+    <%= image_tag 'certif.png', class: "img-style", data: {toggle: "tooltip", placement: "top"}, title: "Certification" %>
+    <%= image_tag 'menage.png', class: "img-style", data: {toggle: "tooltip", placement: "top"}, title: "Household" %>
+    <%= image_tag 'cuisine.png', class: "img-style", data: {toggle: "tooltip", placement: "top"}, title: "Cooking" %>
+    <%= image_tag 'gestion bb.png', class: "img-style", data: {toggle: "tooltip", placement: "top"}, title: "Baby accepted" %>
+    <%= image_tag 'calendar.png', class: "calendar" %>
+    <div class="book">
+      <%= link_to "Book now", "#", class: "btn btn-flat" %>
     </div>
   </div>
 </div>
-
-  <div class=“card-trip”>
-   <img src=“chat.png” class=“img-style”>
-  </div>
+<div class=“card-trip”>
+  <img src=“chat.png” class=“img-style”>
+</div>
 </div>
