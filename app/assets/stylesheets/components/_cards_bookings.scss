@@ -1,0 +1,51 @@
+.cards-bookings {
+  overflow: hidden;
+  position: relative;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 800px;
+}
+
+.cards-bookings img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.cards-bookings h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  padding-left: 10px;
+}
+
+.cards-bookings p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+  padding-left: 10px;
+}
+
+.cards-bookings .btn-secondary {
+  position: absolute;
+  right: 20px;
+  top: 40px;
+}
+
+.cards-bookings .btn-flat {
+  position: absolute;
+  right: 130px;
+  top: 40px;
+}
+
+// .card-product .card-product-infos {
+//   padding: 30px;
+//   text-decoration: none;
+// }
