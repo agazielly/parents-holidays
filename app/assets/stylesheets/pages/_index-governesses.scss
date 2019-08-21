@@ -7,7 +7,27 @@
   background: blue;
 }
 
-.card-governess-infos #price {
+.card-governess-price {
+  margin-left: 0px;
   position: absolute;
-  right: 10px
+  right: 20px;
 }
+.left-side a {
+  text-decoration: none;
+}
+
+.cards-governess {
+  position: relative;
+}
+
+.card-governess-infos h2 {
+   color: black;
+ }
+.card-governess-infos p {
+   color: black;
+ }
+
+ .card-governess-price h2 {
+   color: black;
+ }
+
