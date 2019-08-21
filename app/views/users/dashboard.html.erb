@@ -11,23 +11,21 @@
     </li>
   </ul>
   <div class="d-flex">
-    <!-- <div class="container"> -->
-    <div class="left-side row d-flex justify-content-around">
-      <%# @bookings.each do |governess| %>
-      <%#= link_to governess_path(governess) do %>
-        <div class="cards-bookings">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-          <div class="card-bookings-infos">
-          <h2><%#= governess.user.firstname %> <%#= governess.user.lastname %></h2>
-          <p><%#=governess.location%></p>
-          <p id= "price"><%#=governess.price%></p>
-          <button name="button" type="" class="btn btn-flat"><i class=""></i>Edit</button>
-          <button name="button" type="" class="btn btn-secondary"><i class=""></i>Cancel</button>
+     <div class="left-side row d-flex justify-content-around">
+      <% @bookings.each do |booking| %>
+        <%= link_to booking_path(booking) do %>
+          <div class="cards-bookings">
+            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+            <div class="card-bookings-infos">
+            <h2><%=   User.where(id: booking.governess.id).first.firstname %> <%=   User.where(id: booking.governess.id).first.lastname %></h2>
+            <p><%= booking.location%></p>
+            <p id= "price"><%=booking.total_price%></p>
+            <button name="button" type="" class="btn btn-flat"><i class=""></i>Edit</button>
+            <button name="button" type="" class="btn btn-secondary"><i class=""></i>Cancel</button>
+          </div>
         </div>
-      </div>
-    <%# end %>
-    <%#end%>
-    <!-- </div> -->
+      <% end %>
+    <%end%>
   </div>
 </div>
 
