@@ -58,7 +58,7 @@ users_attributes = [
   {
     firstname: 'Audrey',
     lastname: 'Stefasnecu',
-    email: 'audrey.stefanescu',
+    email: 'audrey@stefanescu.com',
     password: 'password',
     picture: 'https://res.cloudinary.com/agazielly/image/upload/v1566378876/vladislav-nikonov-TJVDji1_In4-unsplash_mwdyxl.jpg',
   },
@@ -85,7 +85,7 @@ users_attributes = [
   },
   {
     firstname: "Julie",
-    lastname: "Garnier"
+    lastname: "Garnier",
     email: "julie@garnier.com",
     password: 'password',
     picture: 'https://res.cloudinary.com/agazielly/image/upload/v1566378874/ayo-ogunseinde-THIs-cpyebg-unsplash_phns9d.jpg',
@@ -114,22 +114,24 @@ users_attributes = [
   {
     firstname: "Clarence",
     lastname: "Delarue",
-    email: "clarence.delarue",
+    email: "clarence@delarue.com",
     password: 'password',
     picture: 'https://res.cloudinary.com/agazielly/image/upload/v1566378875/joe-gardner-pAs4IM6OGWI-unsplash_bvbqzw.jpg',
-  },
+  }
 ]
-User.create!(users_attributes)
-puts 'Users created'
-
-  puts 'Creating governesses...'
+users_attributes.each do |attribute|
+  user = User.new(attribute)
+  user.save!
+end
 
   User.all.each do |user|
     Governess.create!(
       price: 100,
-      location: %w(Cap Ferret, Ibiza).sample,
+      location: %w(Cap-Ferret, Ibiza).sample,
       description: Faker::TvShows::GameOfThrones.quote,
       user_id: user.id)
   end
+
+
 
 puts 'Finished!'
