@@ -10,7 +10,8 @@
     <% @governesses.each do |governess| %>
     <%= link_to governess_path(governess) do %>
       <div class="cards-governess">
-        <img src=<%= governess.user.picture %>/>
+      <%= image_tag governess.user.picture %>
+        <!-- <img src=<%= governess.user.picture %>/> -->
         <div>
           <div class="card-governess-infos">
             <h2><%= governess.user.firstname %> <%= governess.user.lastname %></h2>
