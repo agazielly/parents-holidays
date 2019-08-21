@@ -1,5 +1,5 @@
 
-<div class="banner-index-governesses" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+<div class="banner-index-governesses" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/agazielly/image/upload/v1566379607/ran-berkovich-MtvmcxQY7EM-unsplash_svzrkq.jpg);">
   <div class="container-banner">
   </div>
 </div>
@@ -10,12 +10,16 @@
     <% @governesses.each do |governess| %>
     <%= link_to governess_path(governess) do %>
       <div class="cards-governess">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-        <div class="card-governess-infos">
-        <h2><%= governess.user.firstname %> <%= governess.user.lastname %></h2>
-        <p><%=governess.location%></p>
-        <p id= "price"><%=governess.price%></p>
-      </div>
+        <img src=<%= governess.user.picture %>/>
+        <div>
+          <div class="card-governess-infos">
+            <h2><%= governess.user.firstname %> <%= governess.user.lastname %></h2>
+            <p><%=governess.location%></p>
+          </div>
+        <div class="card-governess-price d-flex justify-content-end">
+            <h2><%=governess.price%>€/jour</h2>
+          </div>
+        </div>
     </div>
   <% end %>
   <%end%>
