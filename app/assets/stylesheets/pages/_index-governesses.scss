@@ -8,8 +8,10 @@
   margin-right: 15px;
 }
 
-.card-governess-infos #price {
+.card-governess-price {
+  margin-left: 0px;
   position: absolute;
+
 }
 
 #map {
@@ -17,3 +19,22 @@
   position: sticky;
   top: 0;
 }
+.left-side a {
+  text-decoration: none;
+}
+
+.cards-governess {
+  position: relative;
+}
+
+.card-governess-infos h2 {
+   color: black;
+ }
+.card-governess-infos p {
+   color: black;
+ }
+
+ .card-governess-price h2 {
+   color: black;
+ }
+
