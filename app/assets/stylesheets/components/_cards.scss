@@ -1,8 +1,15 @@
+.container {
+  display: flex;
+  margin-bottom: 50px;
+}
+
 .card-trip {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  height: 500px;
+  min-height:80vh;
+  width: 50%;
+  margin: 10px;
 }
 
 .card-trip>img {
@@ -12,13 +19,13 @@
 }
 
 .card-trip h2 {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
   margin: 0;
 }
 
 .card-trip p {
-  font-size: 12px;
+  font-size: 16px;
   opacity: .7;
   margin: 0;
   width: 60%;
@@ -47,9 +54,11 @@
 .name h2 {
   font-size: 40px;
 }
-.localisation{
-  margin-bottom:10px;
+
+.localisation {
+  margin-bottom: 10px;
 }
+
 .card-trip-infos2 {
   padding: 20px;
 }
