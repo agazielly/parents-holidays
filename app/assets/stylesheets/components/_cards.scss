@@ -58,7 +58,10 @@
   position: absolute;
   left: 16px;
   top: -70px;
-  width: 130px;
+  width: 25%;
+  border-radius: 50%;
+  height: 85%;
+  object-fit: cover;
 }
 
 .name {
@@ -81,8 +84,8 @@
 .img-style {
   height: 60px !important;
   width: 60px !important;
-  
-  
+
+
   object-fit: cover;
   margin: 5px;
 }
@@ -90,7 +93,7 @@
 .img-style2 {
   height: 60px !important;
   width: 60px !important;
-  
+
   object-fit: cover;
   margin: 5px;
   position: absolute;
