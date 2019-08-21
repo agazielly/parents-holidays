@@ -4,10 +4,37 @@
 
 .right-side {
   width: 60%;
-  background: blue;
+  margin-top: 35px;
+  margin-right: 15px;
 }
 
-.card-governess-infos #price {
+.card-governess-price {
+  margin-left: 0px;
   position: absolute;
-  right: 10px
+
 }
+
+#map {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+.left-side a {
+  text-decoration: none;
+}
+
+.cards-governess {
+  position: relative;
+}
+
+.card-governess-infos h2 {
+   color: black;
+ }
+.card-governess-infos p {
+   color: black;
+ }
+
+ .card-governess-price h2 {
+   color: black;
+ }
+
