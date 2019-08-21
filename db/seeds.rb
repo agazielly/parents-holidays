@@ -132,6 +132,16 @@ end
       user_id: user.id)
   end
 
-
+bookings_attributes = [
+  {
+    location: 'Ibiza',
+    checkin: '10/09/2019',
+    checkout: '18/09/2019',
+    total_price: 1000,
+    user_id: 1,
+    governess_id: 6,
+  }
+]
+  Booking.create!(bookings_attributes)
 
 puts 'Finished!'

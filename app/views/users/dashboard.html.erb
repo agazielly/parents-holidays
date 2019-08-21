@@ -20,7 +20,7 @@
             <div class="card-bookings-infos">
             <h2><%=   User.where(id: booking.governess.id).first.firstname %> <%=   User.where(id: booking.governess.id).first.lastname %></h2>
             <p><%= booking.location%></p>
-            <p id= "price"><%=booking.total_price%></p>
+            <p id= "price"><%=booking.total_price%> €</p>
             <button name="button" type="" class="btn btn-flat"><i class=""></i>Edit</button>
             <button name="button" type="" class="btn btn-secondary"><i class=""></i>Cancel</button>
           </div>
