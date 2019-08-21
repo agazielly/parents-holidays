@@ -20,7 +20,7 @@
         <li class="nav-item dropdown">
           <%= image_tag "https://res.cloudinary.com/agazielly/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1566308007/christopher-campbell-rDEOVtE7vOs-unsplash_yzgkpv.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "My dashbord", "#", class: "dropdown-item" %>
+            <%= link_to "My dashbord", dashboard_path, class: "dropdown-item" %>
             <%#= link_to "Another action", "#", class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
