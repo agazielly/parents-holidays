@@ -2,6 +2,16 @@ class GovernessesController < ApplicationController
 
   def index
     @governesses = Governess.all
+    @governesses_map = Governess.geocoded #returns flats with coordinates
+
+    @markers = @governesses_map.map do |governess|
+      {
+        lat: governess.latitude,
+        lng: governess.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { governess: governess })
+        # image_url: helpers.asset_url('https://res.cloudinary.com/agazielly/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1566246427/joan-mm-EHuyA_oUCok-unsplash_ymnzy9.jpg')
+      }
+    end
   end
 
   def show
@@ -26,6 +36,6 @@ class GovernessesController < ApplicationController
   private
 
   def params_governess
-    params.require(:governess).permit(:location, :description, :price, :picture)
+    params.require(:governess).permit(:location, :description, :price)
   end
 end
