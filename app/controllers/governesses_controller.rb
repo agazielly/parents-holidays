@@ -1,11 +1,11 @@
 class GovernessesController < ApplicationController
 
   def index
-@governesses = Governess.all
+    @governesses = Governess.all
   end
 
   def show
-
+     @governess = Governess.find(params[:id])
   end
 
   def new
