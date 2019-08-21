@@ -22,7 +22,16 @@
   </div>
 </div>
 
-  <div class="right-side"></div>
+  <div class="right-side">
+    <div
+  id="map"
+  style="width: 100%;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_KEY'] %>">
+    </div>
+  </div>
+
 </div>
 <!--
 <div class="container">

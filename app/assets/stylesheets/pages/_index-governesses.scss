@@ -4,10 +4,16 @@
 
 .right-side {
   width: 60%;
-  background: blue;
+  margin-top: 35px;
+  margin-right: 15px;
 }
 
 .card-governess-infos #price {
   position: absolute;
-  right: 10px
+}
+
+#map {
+  height: 100vh;
+  position: sticky;
+  top: 0;
 }
