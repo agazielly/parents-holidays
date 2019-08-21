@@ -15,7 +15,8 @@
       <% @bookings.each do |booking| %>
         <%= link_to booking_path(booking) do %>
           <div class="cards-bookings">
-            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+            <<!-- img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" /> -->
+            <%= image_tag User.where(id: booking.governess.id).first.picture %>
             <div class="card-bookings-infos">
             <h2><%=   User.where(id: booking.governess.id).first.firstname %> <%=   User.where(id: booking.governess.id).first.lastname %></h2>
             <p><%= booking.location%></p>
