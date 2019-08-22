@@ -2,7 +2,7 @@
   overflow: hidden;
   height: 120px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
   margin-top: 20px;
@@ -40,8 +40,34 @@
   position: relative;
 }
 
-.card-trip1 .book {
+.container-show {
+  position: relative;
+}
+
+.container-show .book {
   position: absolute;
-  bottom: 10px;
-  right: 10px;
+  left: 26px;
+  top: -50px;
+}
+
+.container-calendar {
+  margin-top: 75px;
+}
+
+.btn-flat-calendar {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #f36865;
+  transition: background 0.3s ease;
+  margin-top: 3px;
+}
+
+.btn-flat:hover {
+  background: #ff9999;
+  color: white;
+}
+
+.flex {
+  display: flex;
 }
