@@ -8,6 +8,7 @@
 require 'faker'
 
 puts 'Cleaning database...'
+Booking.destroy_all
 Governess.destroy_all
 User.destroy_all
 
@@ -127,21 +128,20 @@ end
   User.all.each do |user|
     Governess.create!(
       price: 100,
-      location: %w(Cap-Ferret, Ibiza).sample,
+      location: %w(Cap-Ferret Ibiza).sample,
+      category: %w(Governess Driver Cook Body-guard Gardener).sample,
       description: Faker::TvShows::GameOfThrones.quote,
       user_id: user.id)
   end
 
-bookings_attributes = [
-  {
-    location: 'Ibiza',
-    checkin: '10/09/2019',
-    checkout: '18/09/2019',
-    total_price: 1000,
-    user_id: 1,
-    governess_id: 6,
-  }
-]
-  Booking.create!(bookings_attributes)
+booking = Booking.new
+booking.location = 'Ibiza'
+booking.checkin = '10/09/2019'
+booking.checkout = '18/09/2019'
+booking.total_price = 1000
+booking.user_id = User.last.id
+booking.governess_id = Governess.last.id
+
+booking.save!
 
 puts 'Finished!'
