@@ -35,3 +35,13 @@
   padding: 30px;
   text-decoration: none;
 }
+
+.card-trip1 {
+  position: relative;
+}
+
+.card-trip1 .book {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
