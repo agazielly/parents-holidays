@@ -1,32 +1,30 @@
 <div class="container">
   <ul class="list-inline tabs-underlined">
     <li>
-      <a href="#" class="tab-underlined active">Current bookings</a>
+      <a href="#" class="tab-underlined active">My trips</a>
     </li>
     <li>
-      <a href="#" class="tab-underlined">Past bookings</a>
+      <a href="#" class="tab-underlined">Past trips</a>
+    </li>
+    <li>
+      <a href="#" class="tab-underlined">My missions</a>
     </li>
     <li>
       <a href="#" class="tab-underlined">Messages</a>
     </li>
   </ul>
-  <div class="d-flex">
-     <div class="left-side row d-flex justify-content-around">
-      <% @bookings.each do |booking| %>
-        <%= link_to booking_path(booking) do %>
-          <div class="cards-bookings">
-            <!-- img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" /> -->
-            <%= image_tag User.where(id: booking.governess.id).first.picture %>
-            <div class="card-bookings-infos">
-            <h2><%=   User.where(id: booking.governess.id).first.firstname %> <%=   User.where(id: booking.governess.id).first.lastname %></h2>
-            <p><%= booking.location%></p>
-            <p id= "price"><%=booking.total_price%> €</p>
-            <button name="button" type="" class="btn btn-flat"><i class=""></i>Edit</button>
-            <button name="button" type="" class="btn btn-secondary"><i class=""></i>Cancel</button>
-          </div>
-        </div>
+
+  <!-- <div class="d-flex"> -->
+     <!-- <div class="left-side row d-flex justify-content-around"> -->
+          <div class="cards-journey">
+            <% @bookings.each do |booking| %>
+              <%= link_to booking_path(booking) do %>
+                <div class="card-journey-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= Unsplash::Photo.search(booking.location).first.urls.full %>)">
+                  <%= booking.location %>
+              </div>
+          <!-- </div> -->
       <% end %>
-    <%end%>
-  </div>
+    <% end%>
+  <!-- </div> -->
 </div>
 
