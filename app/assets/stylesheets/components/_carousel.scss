@@ -1,4 +1,6 @@
 .carousel-inner {
+  display: flex;
+  position: relative;
   box-shadow: 0 10px 30px rgba(0,0,0,.1);
 }
 
@@ -9,9 +11,18 @@
 }
 
 .carousel-caption {
-  text-align: right;
+  text-align: center;
   color: black;
-  max-width: 500px;
-  margin-left: 200px;
-  margin-bottom: -30px;
+  // max-width: 500px;
+  // margin-left: 200px;
+  // margin-bottom: -30px;
+  position: absolute;
+  right: 30px;
+}
+
+.carousel-item img {
+  object-fit: cover;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
 }
