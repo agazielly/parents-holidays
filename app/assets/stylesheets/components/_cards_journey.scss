@@ -5,6 +5,11 @@
   margin-top: 45px;
 }
 
+.cards-journey-button {
+  background-color: rgba(255, 255, 255, 0);
+  border-style: none;
+}
+
 .card-journey-category {
   background-size: cover;
   background-position: center;
@@ -20,10 +25,6 @@
   border-radius: 50%;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
-
-// .card-journey-category:hover {
-//   text-decoration: none !important;
-// }
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {

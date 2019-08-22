@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
   def dashboard
-    @bookings = Booking.where(user_id: current_user)
+    @locations = current_user.bookings.group_by(&:location)
   end
 end
