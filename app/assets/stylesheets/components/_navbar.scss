@@ -1,11 +1,11 @@
 .navbar {
   position: sticky;
-  top: 5px;
+  top: 0px;
 }
 
 .navbar-myparents {
   justify-content: space-between;
-  background: white;
+  background: transparent;
 }
 
 .navbar-myparents .navbar-collapse {
@@ -27,7 +27,7 @@
 }
 
 .navbar-home {
-  background: transparent;
+  background: white;
 }
 
 .nav-item img {
