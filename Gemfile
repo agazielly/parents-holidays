@@ -18,6 +18,7 @@ gem 'devise'
 gem 'faker'
 gem 'geocoder'
 gem 'pg_search', '~> 2.3.0'
+gem 'unsplash'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
