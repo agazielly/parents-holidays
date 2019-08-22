@@ -1,6 +1,30 @@
 
 <div class="banner-index-governesses" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/agazielly/image/upload/v1566379607/ran-berkovich-MtvmcxQY7EM-unsplash_svzrkq.jpg);">
-  <div class="container-banner">
+  <div class="container-search">
+    <%= form_tag governesses_path, method: :get do %>
+       <div class=" mb-2">
+        <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Select a location..."
+        %>
+        </div>
+        <div class="mb-2">
+        <%= text_field_tag :category,
+          params[:category],
+          class: "form-control",
+          placeholder: "Select a category..."
+          %>
+          </div>
+        <div class="mb-2">
+
+          </div>
+      <div class="button-search">
+      <%= submit_tag "Search", class: "btn-flat" %>
+      </div>
+    <% end %>
+  </div>
+
   </div>
 </div>
 
