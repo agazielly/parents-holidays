@@ -1,20 +1,18 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/agazielly/image/upload/v1566245510/tyler-nix-V3dHmb1MOXM-unsplash_l3fymk.jpg);">
-
   <div class="container">
-    <h1>Give your family  <strong>some real holidays,</strong></h1>
-    <h2>Get a  HoliHelper!</h2>
+    <h1>Give your family <strong>some real holidays,</strong></h1>
+    <h2>Get a HoliHelper!</h2>
     <div>
-    <%= form_tag governesses_path, method: :get do %>
-    <%= text_field_tag :query,
+      <%= form_tag governesses_path, method: :get do %>
+      <%= text_field_tag :query,
     params[:query],
     class: "form-control",
-    placeholder: "Your holliday destination..."
+    placeholder: "Your holiday destination..."
     %>
-  <%= submit_tag "Search", class: "btn btn-flat" %>
-  <% end %>
+      <%= submit_tag "Search", class: "btn btn-flat" %>
+      <% end %>
     </div>
-</div>
-
+  </div>
 </div>
 <div class="container my-5">
   <div class="bd-example">
@@ -56,7 +54,23 @@
         <span class="sr-only">Next</span>
       </a>
     </div>
+    <div class="arrow bounce">
+      <a class="fa fa-arrow-down fa-2x" href="#"></a>
+      <h5>Scroll down</h5>
+    </div>
+  </div>
+  <div class="container-cards-home">
+    <h5>How it works</h5>
+    <div class="cards-home">
+      <div class="card-category" data-aos="flip-right" data-aos-duration="3000" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/agazielly/image/upload/v1566564553/samples/bruce-mars-ieIY61ZHhs8-unsplash-min_fgwg35.jpg)">
+        Select your trip
+      </div>
+      <div class="card-category" data-aos="flip-right" data-aos-duration="3000" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/agazielly/image/upload/v1566564517/samples/joe-gardner-pAs4IM6OGWI-unsplash_bvbqzw-min_jioiid.jpg)">
+        Choose your Holi Helper
+      </div>
+      <div class="card-category" data-aos="flip-right" data-aos-duration="3000" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/agazielly/image/upload/v1566564551/samples/anna-demianenko-X912jiy57JU-unsplash-min_djtgsu.jpg)">
+        Enjoy...
+      </div>
+    </div>
   </div>
 </div>
-
-
