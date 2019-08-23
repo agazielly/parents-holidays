@@ -1,6 +1,10 @@
+.navbar {
+  top: 0px;
+}
+
 .navbar-myparents {
   justify-content: space-between;
-  background: white;
+  background: transparent;
 }
 
 .navbar-myparents .navbar-collapse {
@@ -13,12 +17,21 @@
   border-radius: 50%;
 }
 
+.navbar-brand-name {
+  padding-top: 10px;
+  font-family: "Open Sans", "Helvetica", "sans-serif";
+  font-size: 20px;
+  font-weight: 400px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
 .navbar-home {
-  background: transparent;
+  background: white;
 }
 
 .nav-item img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
+  object-fit: cover;
 }
