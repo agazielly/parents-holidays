@@ -57,7 +57,8 @@
           <li>Location: <%= @booking.location %></li>
         </ul>
       </div>
-        <!-- <a href="#" class='btn btn-warning' id='update-booking'>Update</a> -->
+        <div><%= link_to 'Delete your booking', booking_path(@booking), method: :delete, class: 'btn btn-warning' %></div>
+        <!-- a href="#" class='btn btn-warning' id='update-booking'>Delete your booking</a> -->
         <div class='form-container-update'>
           <%#= simple_form_for @photographer, :url => savenew_photographers_path, :method => :patch ... # etc%>
         <%#= simple_form_for [@governess, @booking ]  do |f| %>

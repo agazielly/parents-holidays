@@ -16,10 +16,8 @@
                   <div class="card-bookings-infos">
                     <h2><%= booking.governess.user.firstname.capitalize %> <%= booking.governess.user.lastname.capitalize %></h2>
                     <p><%= location.capitalize %></p>
-                    <p id= "price"><%= booking.total_price %> €</p>
-                    <!-- <button name="button" type="" class="btn btn-secondary"><i class=""></i>Cancel</button> -->
                   </div>
-                    <%= link_to 'Details', booking_path(booking), class: 'btn btn-warning' %>
+                  <%= link_to 'Details', booking_path(booking), class: 'btn btn-flat', id: 'btn-modal' %>
                 </div>
             </div>
           </div>

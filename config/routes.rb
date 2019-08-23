@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :governesses, only: [:show, :new, :index, :create] do
     resources :bookings, only: :create
   end
-  resources :bookings, only: :show
+  resources :bookings, only: [:show, :destroy]
 
 
   # verb url, to: "controller#action"
