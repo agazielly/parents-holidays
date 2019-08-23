@@ -14,17 +14,16 @@
     </li>
   </ul>
 
-  <!-- <div class="d-flex"> -->
-     <!-- <div class="left-side row d-flex justify-content-around"> -->
-          <div class="cards-journey">
-            <% @bookings.each do |booking| %>
-              <%= link_to booking_path(booking) do %>
-                <div class="card-journey-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= Unsplash::Photo.search(booking.location).first.urls.full %>)">
-                  <%= booking.location %>
-              </div>
-          <!-- </div> -->
-      <% end %>
-    <% end%>
-  <!-- </div> -->
+  <div class="cards-journey">
+    <% @locations.each do |location, bookings| %>
+      <%#= link_to booking_path(booking) do %>
+      <button class="cards-journey-button" type="button" data-toggle="modal" data-target="#modal-<%=bookings.first.location%>">
+        <div class="card-journey-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= Unsplash::Photo.search(location).first.urls.full %>)">
+          <%= location %>
+        </div>
+      </button>
+      <%= render 'shared/modal-trip', bookings: bookings, location: location %>
+    <% end %>
+  </div>
 </div>
 
