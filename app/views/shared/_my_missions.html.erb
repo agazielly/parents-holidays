@@ -1,8 +1,8 @@
-<!-- <div>
-  <%# bookings.each do |booking| %>
+<div>
+  <% Booking.each do |booking| %>
           <div class="d-flex">
             <div class="left-side row d-flex justify-content-around ml-3">
-              <%#= link_to governess_path(booking.governess_id) do %>
+              <%= link_to governess_path(booking.governess_id) do %>
                 <div class="cards-bookings">
                   <%= image_tag booking.user.picture %>
 
@@ -14,9 +14,9 @@
                     <button name="button" type="" class="btn btn-secondary"><i class=""></i>Decline</button>
                   </div>
                 </div>
-              <%# end %>
+              <% end %>
             </div>
           </div>
-        <%# end %>
+        <%end %>
 </div>
- -->
+
