@@ -313,4 +313,12 @@ booking.governess_id = Governess.last.id
 
 booking.save!
 
+bookingNiney = Booking.new
+booking.location = 'Ibiza'
+booking.checkin = '24/08/2019'
+booking.checkout = '30/09/2019'
+booking.total_price = 700
+booking.user_id = 1
+booking.governess_id = 19
+
 puts 'Finished!'
