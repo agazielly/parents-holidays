@@ -1,6 +1,8 @@
 <div class="container container-show mt-5">
-  <%#= link_to "Back", @governesses_path class: "btn btn-flat" %>
-  <div class="card-trip">
+  <div class="book">
+    <%= link_to "Back", governesses_path, class: "btn btn-secondary" %>
+  </div>
+  <div class="card-trip" data-aos="fade-right" data-aos-duration="1750">
     <%= image_tag 'fond profil.jpg' %>
     <div class="card-trip-infos">
       <%= image_tag @governess.user.picture, class:"card-trip-user avatar-bordered" %>
@@ -23,23 +25,46 @@
       </div>
       <div class="">
         <h2>Description</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus aliquam suscipit, qui nihil quas unde beatae sunt dolorum id nemo. Officia nisi esse veritatis magnam soluta, sequi eius reprehenderit consequuntur!</p>
+        <p>
+          <%= @governess.description %>
+        </p>
       </div class="chat">
       <%= image_tag 'chat.png', class: "img-style2", data: {toggle: "tooltip", placement: "top"}, title: "Send a Message" %>
     </div>
   </div>
-  <div class="card-trip1">
-    <%= image_tag 'certif.png', class: "img-style", data: {toggle: "tooltip", placement: "top"}, title: "Certification" %>
-    <%= image_tag 'menage.png', class: "img-style", data: {toggle: "tooltip", placement: "top"}, title: "Household" %>
-    <%= image_tag 'cuisine.png', class: "img-style", data: {toggle: "tooltip", placement: "top"}, title: "Cooking" %>
-    <%= image_tag 'gestion bb.png', class: "img-style", data: {toggle: "tooltip", placement: "top"}, title: "Baby accepted" %>
-    <%= image_tag 'calendar.png', class: "calendar" %>
-    <div class="book">
-      <%= link_to "Book now", governesses_path, class: "btn btn-flat" %>
+  <div class="card-trip1" data-aos="fade-left" data-aos-duration="1750">
+    <div class="mamad-flex">
+      <div class="img-style-effect" data-aos="fade-left" data-aos-duration="1000">
+        <%= image_tag 'certif.png', class: "img-style", data: {toggle: "tooltip", placement: "top"}, title: "Certification" %>
+      </div>
+      <div class="img-style-effect" data-aos="fade-left" data-aos-duration="1500">
+        <%= image_tag 'menage.png', class: "img-style", data: {toggle: "tooltip", placement: "top"}, title: "Household" %>
+      </div>
+      <div class="img-style-effect" data-aos="fade-left" data-aos-duration="2000">
+        <%= image_tag 'cuisine.png', class: "img-style", data: {toggle: "tooltip", placement: "top"}, title: "Cooking" %>
+      </div>
+      <div class="img-style-effect" data-aos="fade-left" data-aos-duration="2500">
+        <%= image_tag 'bébé.png', class: "img-style", data: {toggle: "tooltip", placement: "top"}, title: "Baby accepted" %>
+      </div>
+    </div>
+    <%# Calendar %>
+    <div class="container container-calendar">
+      <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
+        <h2>Make your Reservation</h2>
+        <%= simple_form_for :search, method: "get" do |f| %>
+        <%= f.input "Check-in/Out", as: :string, placeholder: "Select Date..",required: false, input_html: {class: "datepicker"} %>
+        <%= f.button :submit, "Book now", class: "btn btn-flat-calendar alert_booking" %>
+        <% end %>
+
+        <div id="show_alert" class="flash flash-success alert alert-dismissible fade show d-none" role="alert">
+          <span><strong>Yay!</strong> 🎉 you successfully booked your location with <%= @governess.user.firstname %></span>
+          <a data-dismiss="alert" aria-label="Close">
+            <i class="fas fa-times"></i>
+          </a>
+        </div>
+
+      </div>
     </div>
   </div>
-</div>
-<div class=“card-trip”>
-  <img src=“chat.png” class=“img-style”>
 </div>
 </div>
