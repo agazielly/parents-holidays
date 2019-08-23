@@ -1,7 +1,10 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-myparents <%= "navbar-home" if params[:action] == "home" %>">
-  <%= link_to "/", class: "navbar-brand" do %>
-    <%= image_tag "https://res.cloudinary.com/agazielly/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1566246427/joan-mm-EHuyA_oUCok-unsplash_ymnzy9.jpg" %>
-    <% end %>
+    <ul class="navbar-nav">
+      <li><%= link_to "/", class: "navbar-brand" do %>
+      <%= image_tag "https://res.cloudinary.com/agazielly/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1566246427/joan-mm-EHuyA_oUCok-unsplash_ymnzy9.jpg" %></li>
+      <li class="navbar-brand-name">HoliHelp</li>
+    </ul>
+  <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -11,14 +14,14 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <li class="nav-item active">
+        <li class="nav-item">
           <%= link_to "Become governess", new_governess_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "Messages", "#", class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
-          <%= image_tag "https://res.cloudinary.com/agazielly/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1566308007/christopher-campbell-rDEOVtE7vOs-unsplash_yzgkpv.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%= image_tag User.first.picture, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "My dashbord", dashboard_path, class: "dropdown-item" %>
             <%#= link_to "Another action", "#", class: "dropdown-item" %>

@@ -29,15 +29,17 @@
 </div>
 
 <div class="d-flex">
-  <div class="container">
+  <div class="container" >
   <div class="left-side row d-flex justify-content-around">
     <% @governesses.each do |governess| %>
+
     <%= link_to governess_path(governess, query: params[:query]) do %>
-      <div class="cards-governess">
+      <div class="cards-governess fade-in-fwd">
+
       <%= image_tag governess.user.picture %>
         <!-- <img src=<%= governess.user.picture %>/> -->
         <div>
-          <div class="card-governess-infos">
+          <div class="card-governess-infos" >
             <h2><%= governess.user.firstname %> <%= governess.user.lastname %></h2>
             <p><%=governess.location%></p>
           </div>
