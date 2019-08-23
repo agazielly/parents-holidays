@@ -1,0 +1,33 @@
+<div class="modal fade" id="modal-<%= location %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><%= location %></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <% bookings.each do |booking| %>
+          <div class="d-flex">
+            <div class="left-side row d-flex justify-content-around ml-3">
+              <%= link_to governess_path(booking.governess_id) do %>
+                <div class="cards-bookings">
+                  <%= image_tag booking.governess.user.picture %>
+
+                  <div class="card-bookings-infos">
+                    <h2><%=   booking.governess.user.firstname.capitalize %> <%= booking.governess.user.lastname.capitalize %></h2>
+                    <p><%= location %></p>
+                    <p id= "price"><%= booking.total_price %> €</p>
+                    <button name="button" type="" class="btn btn-flat"><i class=""></i>Edit</button>
+                    <button name="button" type="" class="btn btn-secondary"><i class=""></i>Cancel</button>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

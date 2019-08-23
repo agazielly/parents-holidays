@@ -12,6 +12,7 @@ import { initMapbox } from '../plugins/init_mapbox';
 
 initMapbox();
 
+
 //Fonction Booking calendrier 
 import "../plugins/flatpickr";
 
@@ -28,3 +29,6 @@ console.log(alert_booking);
 alert_booking.addEventListener("click", (event) => {
   show_alert.classList.remove("d-none");
 });
+
+import { initAutocomplete } from '../plugins/init_autocomplete';
+initAutocomplete();

@@ -1,7 +1,11 @@
 class GovernessesController < ApplicationController
 
   def index
-    @governesses = Governess.all
+    if params[:query].present?
+      @governesses = Governess.where("location ILIKE ? AND category ILIKE ?", "%#{params[:query]}%", "%#{params[:category]}%")
+    else
+      @governesses = Governess.all
+    end
     @governesses_map = Governess.geocoded #returns flats with coordinates
 
     @markers = @governesses_map.map do |governess|

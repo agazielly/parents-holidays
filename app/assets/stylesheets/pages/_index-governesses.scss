@@ -1,3 +1,24 @@
+.container-search {
+  background-color: white;
+  padding: 20px;
+  margin-left: 10px;
+  width: 400px;
+  margin-left: 35px;
+  border-radius: 2px;
+  padding: 25px;
+}
+
+
+.form-control {
+  margin-bottom: 15px;
+}
+
+
+.button-search .btn-flat {
+  width: 350px;
+ color: white;
+}
+
 .left-side {
   padding: 15px;
 }
@@ -9,10 +30,10 @@
 }
 
 .card-governess-price {
-  margin-left: 0px;
   position: absolute;
-
+  left: 280px;
 }
+
 
 #map {
   height: 100vh;
