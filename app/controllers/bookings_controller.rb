@@ -1,24 +1,30 @@
 class BookingsController < ApplicationController
-  # def show
+ def show
+  @booking = Booking.find(params[:id])
+  @governess = Governess.find(@booking.governess_id)
+ end
+
+  def create
+    @booking = Booking.new(booking_params)
+    @booking.user = current_user
+    @booking.governess = Governess.find(params[:governess_id])
+    if @booking.save
+      redirect_to governesses_path
+    else
+      render 'governesses/show'
+    end
+  end
+
+  # def edit
   #   @booking = Booking.find(params[:id])
   # end
 
-  def new
-    @user = User.find(params[:user_id])
-    @booking = Booking.new
-  end
-
-  def create
-    @user = User.find(params[:user_id])
-    @governesses = Governess.find(params[:booking][:governess])
-    @governesses.each do |governess|
-      @booking = Booking.new(booking_params)
-      @booking.user = @user
-      @booking.governess = governess
-      @booking.save
-    end
-    redirect_to booking_path(@booking)
-  end
+  # def update
+  #   @governess = Governess.find(params[:governess_id])
+  #   @booking.user = current_user
+  #   @booking.governess = Governess.find(params[:governess_id])
+  #   @booking.update
+  # end
 
   private
 

@@ -2,7 +2,7 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel"><%= location %></h5>
+        <h5 class="modal-title" id="exampleModalLabel">My bookings for <%= location.capitalize %></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -11,19 +11,16 @@
         <% bookings.each do |booking| %>
           <div class="d-flex">
             <div class="left-side row d-flex justify-content-around ml-3">
-              <%= link_to governess_path(booking.governess_id) do %>
                 <div class="cards-bookings">
                   <%= image_tag booking.governess.user.picture %>
-
                   <div class="card-bookings-infos">
-                    <h2><%=   booking.governess.user.firstname.capitalize %> <%= booking.governess.user.lastname.capitalize %></h2>
-                    <p><%= location %></p>
+                    <h2><%= booking.governess.user.firstname.capitalize %> <%= booking.governess.user.lastname.capitalize %></h2>
+                    <p><%= location.capitalize %></p>
                     <p id= "price"><%= booking.total_price %> €</p>
-                    <button name="button" type="" class="btn btn-flat"><i class=""></i>Edit</button>
-                    <button name="button" type="" class="btn btn-secondary"><i class=""></i>Cancel</button>
+                    <!-- <button name="button" type="" class="btn btn-secondary"><i class=""></i>Cancel</button> -->
                   </div>
+                    <%= link_to 'Details', booking_path(booking), class: 'btn btn-warning' %>
                 </div>
-              <% end %>
             </div>
           </div>
         <% end %>

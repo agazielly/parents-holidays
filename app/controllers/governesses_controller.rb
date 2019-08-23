@@ -1,5 +1,4 @@
 class GovernessesController < ApplicationController
-
   def index
     if params[:query].present?
       @governesses = Governess.where("location ILIKE ? AND category ILIKE ?", "%#{params[:query]}%", "%#{params[:category]}%")
@@ -19,7 +18,8 @@ class GovernessesController < ApplicationController
   end
 
   def show
-     @governess = Governess.find(params[:id])
+    @governess = Governess.find(params[:id])
+    @booking = Booking.new
   end
 
   def new

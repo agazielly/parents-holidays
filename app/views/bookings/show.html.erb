@@ -1,6 +1,6 @@
 <div class="container container-show mt-5">
   <div class="book">
-    <%= link_to "Back", governesses_path, class: "btn btn-secondary" %>
+    <%= link_to "Back", dashboard_path, class: "btn btn-secondary" %>
   </div>
   <div class="card-trip" data-aos="fade-right" data-aos-duration="1750">
     <%= image_tag 'fond profil.jpg' %>
@@ -49,26 +49,24 @@
     </div>
     <%# Calendar %>
     <div class="container container-calendar">
-      <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
-        <h2>Make your Reservation</h2>
-        <%= simple_form_for([ @governess, @booking ]) do |f| %>
-        <%= f.input :checkin, as: :string, placeholder: "Select Date..",required: true, input_html: {class: "datepicker"} %>
-        <%= f.input :checkout, as: :string, placeholder: "Select Date..",required: true, input_html: {class: "datepicker"} %>
-        <% if params[:query] %>
-          <%= f.input :location, input_html: { value: params[:query].capitalize }, required: true %>
-        <% else %>
-          <%= f.input :location, required: true %>
-        <% end %>
-        <%= f.button :submit, "Book now", class: "btn btn-flat-calendar alert_booking" %>
-        <% end %>
+      <div class="form-wrapper" id='form-update' style="width: 400px; margin: 0 auto;">
+        <h2>Update your Reservation</h2>
+        <ul>
+          <li>Checkin: <%= @booking.checkin %></li>
+          <li>Checkout: <%= @booking.checkout %></li>
+          <li>Location: <%= @booking.location %></li>
+        </ul>
+      </div>
+        <!-- <a href="#" class='btn btn-warning' id='update-booking'>Update</a> -->
+        <div class='form-container-update'>
+          <%#= simple_form_for @photographer, :url => savenew_photographers_path, :method => :patch ... # etc%>
+        <%#= simple_form_for [@governess, @booking ]  do |f| %>
+        <%#= f.input :checkin, as: :string, placeholder: "Select Date..",required: true, input_html: {class: "datepicker"} %>
+        <%#= f.input :checkout, as: :string, placeholder: "Select Date..",required: true, input_html: {class: "datepicker"} %>
+        <%#= f.button :submit, "Book now", class: "btn btn-flat-calendar alert_booking" %>
+        <%# end %>
 
-        <div id="show_alert" class="flash flash-success alert alert-dismissible fade show d-none" role="alert">
-          <span><strong>Yay!</strong> 🎉 you successfully booked your location with <%= @governess.user.firstname %></span>
-          <a data-dismiss="alert" aria-label="Close">
-            <i class="fas fa-times"></i>
-          </a>
         </div>
-
       </div>
     </div>
   </div>
